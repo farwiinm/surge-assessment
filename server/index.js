@@ -6,7 +6,7 @@ const cors=require('cors');
 const createUsers = require('./controllers/createUsers');
 const userRouter = require('../server/routes/userRouter')
 const notesRouter = require('../server/routes/noteListRouter');
-const authPage = require('./middlewares');
+const userListRouter = require('./routes/userListRouter')
 dotenv.config();
 const corsOptions = {
     exposedHeaders: 'auth-token',
@@ -29,5 +29,6 @@ app.get('/', (req, res) => {
 })
 app.use('/', userRouter)
 app.use('/notes', notesRouter)
+app.use('/admin', userListRouter)
 
 app.listen(5000, () => console.log('Listening on port 5000'))
