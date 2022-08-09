@@ -1,13 +1,12 @@
 import React from 'react';
-import Menu from './notes/menuNotes';
-import Home from './notes/homeNotes';
-import Create from './notes/createNotes';
-import Edit from './notes/editNotes';
+import Create from './admin/createUsers';
+import Menu from './admin/menuUsers';
+import Home from './admin/homeUsers';
+import Profile from './admin/profile';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Profile from './notes/profile';
+import Edit from './admin/editUsers';
 
-
-const Notes = ({setLogin}) => {
+const Admin = ({setLogin}) => {
     return ( 
         <>
         <Router>
@@ -24,4 +23,4 @@ const Notes = ({setLogin}) => {
    );
 }
  
-export default Notes;
+export default Admin;
