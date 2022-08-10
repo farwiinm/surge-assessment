@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     const authorize = async () => {
       const token = localStorage.getItem('tokenStore')
+      // const isAdmin = JSON.parse(atob(token.split('.')[1])).accountType === 'admin';
       if(token){
         const verified = await axios.get('/verify', {
           headers: {Authorization: token}
@@ -27,6 +28,8 @@ function App() {
     <div>
       {
         login ? <Notes setLogin={setLogin}/> : <Login setLogin={setLogin}/>
+        //To login to admin panel
+        // login ? <Admin setLogin={setLogin}/> : <Login setLogin={setLogin}/>
       }
     </div>
   );
